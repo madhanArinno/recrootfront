@@ -1,0 +1,110 @@
+/* import logo from './/fonts/Fontspring-DEMO-greycliffcf-medium.otf'; */
+/* @font-face {
+    font-family:GreycliffCF-Regular ;
+    src: url(..//fonts/GreycliffCF-Regular.woff)
+} */
+
+.footermain {
+    width: auto;
+    height: auto;
+    background: #2a2a2a;
+    z-index: -100;
+    font-family: GreycliffCF-Regular;
+  }
+  .footermain h2 {
+    font-weight: 700;
+    font-size: 32px;
+    font-family: GreycliffCF-DBold;
+  }
+  .blue {
+    /* height: 80px; */
+    width: "1166px";
+    background-color: #4f9aff;
+    border-radius: 5px;
+    z-index: 100;
+    font-family: GreycliffCF-Regular;
+  }
+  .bluemain {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -100px;
+  }
+  .subbtn {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 50px;
+    font-family: GreycliffCF-Regular;
+  }
+  .subhead {
+    font-weight: 700;
+    font-size: 40px;
+    padding-left: 58px;
+    font-family: GreycliffCF-Bold;
+  }
+  .rcrtico {
+    font-weight: 700;
+    font-size: 32px;
+    font-family: GreycliffCF-DBold;
+  }
+  .subpara {
+    font-weight: 400;
+    font-size: 20px;
+    padding-left: 58px;
+  }
+  @media only screen and (max-width: 900px) {
+    .subhead {
+      padding: 0;
+    }
+    .subpara {
+      padding: 0;
+    }
+  }
+  .total {
+    margin-top: 200px;
+    background: #2a2a2a;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    /* margin-top: 180px; */
+  }
+  
+  .description {
+    display: flex;
+    flex-direction: column;
+    padding-left: 45px;
+  }
+  
+  .para p {
+    padding-top: 40px;
+    width: 350px;
+  }
+  .icons {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 20px;
+    /* margin-top: 93px; */
+    /* margin-left: 85px; */
+  }
+  .about {
+    /* margin-top: 235px; */
+    margin-left: 45px;
+  }
+  .abt {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-left: 45px;
+    line-height: 0px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .para p {
+      padding-top: 20px;
+      width: auto;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+  

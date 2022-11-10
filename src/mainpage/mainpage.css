@@ -1,0 +1,9 @@
+.contain{
+    background: url(./logo/Vector5.svg) left top no-repeat,
+     url(./logo/Vector6.svg) right top no-repeat,
+     url(./logo/Vector7.svg) center bottom 50% no-repeat;
+}
+
+.bg-disabled {
+    background: gray;
+  }

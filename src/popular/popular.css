@@ -1,0 +1,18 @@
+/* @font-face {
+    font-family:GreycliffCF-Regular ;
+    src: url(..//fonts/GreycliffCF-Regular.woff)
+} */
+
+.popular {
+    font-family: GreycliffCF-Regular;
+    background-image: url("/src/popular/logo/popular.png");
+    background-repeat: no-repeat;
+    background-position: left 0% bottom 45%;
+  }
+  
+  .imgjob {
+    margin-bottom: 25px;
+    height: 40px;
+    width: 40px;
+  }
+  

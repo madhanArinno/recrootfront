@@ -1,0 +1,43 @@
+.findmain{
+    margin-bottom: 170px;
+    height: 479px;
+    /* background-image: url('/src/find/logo/find.svg') ; */
+    background-repeat: no-repeat;
+    background-size:100%;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    gap:25px;
+    align-items: center;
+    text-align: center;
+    /* font-family: Fontspring-DEMO-greycliffcf-regular; */
+    
+}
+.btntext{
+    /* font-family:Fontspring-DEMO-greycliffcf-medium; */
+    /* font-family: Fontspring-DEMO-greycliffcf-regular; */
+    font-weight: 700;
+    font-size: 20px;
+    font-family:GreycliffCF-Bold;
+
+}
+.title{
+    font-weight: 700;
+    font-size: 68px;
+    color: white;
+    font-family:GreycliffCF-Bold;
+
+}
+
+@media only screen and (max-width: 600px){
+    .title{
+        font-size: 50px;
+    }
+}
+.bodytxt{
+    font-weight: 400;
+    font-size: 24px;
+    color: white;
+    line-height: 50px;
+}

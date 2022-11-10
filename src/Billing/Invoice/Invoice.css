@@ -1,0 +1,82 @@
+.invoicecardstyle{
+    display: flex;
+    flex-direction: row;
+}
+.fullbackcolor{
+background-color:rgba(226, 236, 249, 0.5) ;
+}
+.imagestyle{
+    height: 288px;
+    padding-left: 30px;
+}
+.cardfirsttxtstyle{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    width: 111px;
+    height: 37px;
+    color: rgba(42, 42, 42, 1);
+}
+.cardfirsttxtstyle-1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    width: 99px;
+    height: 28px;
+    color:rgba(106, 106, 106, 1);
+}
+.cardfirsttxtstyle-2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    width: 70px;
+    height: 37px;
+    color: rgba(42, 42, 42, 1);
+}
+.cardfirsttxtstyle-3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    width: 133px;
+    height: 28px;
+    color: rgba(106, 106, 106, 1);
+}
+.firstcrdtotaltxtstyle-1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    width: 47px;
+    height: 23px;
+    color: rgba(42, 42, 42, 1);
+}
+.firstcrdtotaltxtstyle-2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    width: 34px;
+    height: 23px;
+    color: rgba(106, 106, 106, 1);
+    text-align: end;
+}
+.secondcrdtxtstyle-1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    width: 44px;
+    height: 23px;
+    color: rgba(42, 42, 42, 1);
+}
+.secondcrdtxt-2style-1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    width: 111px;
+    height: 23px;
+    color: rgba(106, 106, 106, 1);
+}
+.secondcrdtxt-2style-2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 19px;
+    font-weight: 400;   
+    color: rgba(106, 106, 106, 1);
+}

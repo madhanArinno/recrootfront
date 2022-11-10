@@ -1,0 +1,197 @@
+.tablestyle.css-i4bv87-MuiSvgIcon-root{
+    height: 0% !important;
+    width: 0% !important;
+}
+.cardbgi{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 14px !important; 
+    min-height: 181px;
+    padding: 25px !important;
+}
+.firstcardtxtstyle-1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    width: 160px;
+    height: 16px;
+    color: rgba(255, 255, 255, 1);
+}
+.firstcardtxtstyle-2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    width: 81px;
+    height: 28px;
+    color: white;
+    margin-top: 2%;
+}
+.firstcardtxtstyle-3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    width: 160px;
+    height: 16px;
+    color: rgba(255, 255, 255, 1);
+    margin-top: 2%;
+}
+.secondcardtxtstyle-1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    width: 160px;
+    height: 16px;
+    color: rgba(106, 106, 106, 1);
+}
+.secondcardtxtstyle-2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    width: 81px;
+    height: 28px;
+    color: rgba(42, 42, 42, 1);
+    margin-top: 2%;
+}
+.secondcardtxtstyle-3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    width: 160px;
+    height: 16px;
+    color: rgba(42, 42, 42, 1);
+    margin-top: 2%;
+}
+.rightcardtxtstyle-1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    width: 185px;
+    height: 23px;
+    color: rgba(42, 42, 42, 1);
+}
+.rightcardtxtstyle-2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    width: 55px;
+    height: 18px;
+    color: rgba(58, 58, 58, 1);
+}
+.rightcardtxtstyle-3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    width: 35px;
+    height: 18px;
+    color: rgba(58, 58, 58, 1);
+}
+.rightcardtxtstyle-4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    width: 60px;
+    height: 18px;
+    color: rgba(58, 58, 58, 1);
+}
+.rightcardtxtstyle-5{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    width: 30px;
+    height: 18px;
+    color: rgba(58, 58, 58, 1);
+}
+.rightcardtxtstyle-6{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    width: 30px;
+    height: 18px;
+    color: rgba(58, 58, 58, 1);
+    text-align: end;
+}
+.rightcardtxtstyle-7{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    width: 30px;
+    height: 18px;
+    color: rgba(58, 58, 58, 1);
+    text-align: end;
+}
+.rightcardtxt-2style-1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    width: 45px;
+    height: 18px;
+    color:rgba(106, 106, 106, 1);
+    text-align: end;
+}
+.rightcardtxt-2style-2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: "Regular";
+    font-weight: 400;
+    font-size: 14px;
+    width: 87px;
+    height: 18px;
+    color:rgba(106, 106, 106, 1);
+    text-align: end;
+}
+.rightcardtxt-2style-3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: "Regular";
+    font-weight: 400;
+    font-size: 14px;
+    width: 159px;
+    height: 16px;
+    color:rgba(106, 106, 106, 1);
+    text-align: end;
+}
+.rightcardtxt-2style-4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: "Regular";
+    font-weight: 400;
+    font-size: 14px;
+    width: 159px;
+    height: 16px;
+    color:rgba(106, 106, 106, 1);
+    text-align: end;
+}
+.rightcardtxt-2style-5{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: "Regular";
+    font-weight: 400;
+    font-size: 14px;
+    width: 159px;
+    height: 16px;
+    color:rgba(106, 106, 106, 1);
+    text-align: end;
+}
+.rightcardtxt-2style-6{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: "Regular";
+    font-weight: 700;
+    font-size: 14px;
+    width: 182px;
+    height: 16px;
+    color:rgba(106, 106, 106, 1);
+}
+.checkboxstyle{
+    width: 27px;
+    height: 26px;
+}
+.inputstyle{
+    margin-bottom: 10%;
+}
+.css-17jjc08-MuiDataGrid-footerContainer {
+    display: none !important;
+}
+.css-f3jnds-MuiDataGrid-columnHeaders {
+    background-color: rgba(224, 224, 224, 1);
+}
+.css-s1v7zr-MuiDataGrid-virtualScrollerRenderZone {
+    margin-top: 8px;
+   
+}

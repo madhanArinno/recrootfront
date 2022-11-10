@@ -1,0 +1,73 @@
+.recentmain {
+    height: auto;
+    font-family: GreycliffCF-Regular;
+  }
+  
+  .titlerecent {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 50px;
+    margin-top: 45px;
+    text-align: center;
+    font-family: GreycliffCF-Bold;
+  }
+  
+  .jobs {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  
+  .titlejobs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* margin-top: 57px; */
+  }
+  .jobsbdy {
+    /* padding-left:30px ;
+      padding-right:30px ; */
+    margin-top: 11px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* row-gap: 24px; */
+    /* column-gap: 15px; */
+  }
+  
+  .btnrct {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: 0em;
+    text-align: left;
+  }
+  
+  .cardjbs {
+    font-family: GreycliffCF-Regular;
+  }
+  
+  .typejb {
+    height: 30px;
+    width: 115px;
+    background-color: #d7e8ff;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    gap: "15px";
+    /* margin-bottom:'20px' */
+  }
+  .typetxt {
+    font-size: 16px;
+    font-weight: bold;
+    color: #4f9aff;
+  }
+  

@@ -1,0 +1,13 @@
+input[type=file]::-webkit-file-upload-button {
+    visibility: hidden;
+    color: transparent;
+}
+input[type='file'] {
+    color: rgba(0, 0, 0, 0);
+    opacity:0;
+    /* z-index: -1; */
+   
+
+  }
+  
+  

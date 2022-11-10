@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "GreycliffCF-Regular";
+  src: local("GreycliffCF-Regular"),
+    url("./fonts/GreycliffCF-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GreycliffCF-Bold";
+  src: local("GreycliffCF-Bold"),
+    url("./fonts/GreycliffCF-Bold.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "GreycliffCF-DBold";
+  src: local("GreycliffCF-DBold"),
+    url("./fonts/GreycliffCF-DemiBold.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "arial";
+  src: local("arial"),
+    url("./fonts/Arialn.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "arial-bold";
+  src: local("arial-bold"),
+    url("./fonts/ARIBL0.ttf") format("truetype");
+  font-weight: normal;
+}
+
+body {
+  margin: 0;
+  font-family: GreycliffCF-Regular;
+}
+a{
+  text-decoration: none;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
