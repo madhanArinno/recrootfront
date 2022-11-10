@@ -13,11 +13,10 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { selectTheJob } from "../slices/search";
+import { getsingleJob, selectTheJob } from "../slices/search";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { NEUTRAL, PRIMARY } from "../Theme/Colors";
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
-import { searchJobsFromHome } from "../slices/search";
 import { USER_EXPERIENCES } from "../constants";
 
 export function Maindetails() {
@@ -26,10 +25,7 @@ export function Maindetails() {
   let [searchParams] = useSearchParams();
   var counts = ["1", "2", "1", "2", "1", "2", "1", "2"];
 
-  useEffect(() => {
-    let jobId = searchParams.get("job");
-    if (jobId) dispatch(searchJobsFromHome(jobId)).unwrap();
-  }, [dispatch, searchParams]);
+
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorEl1, setAnchorEl1] = React.useState(null);
@@ -47,7 +43,14 @@ export function Maindetails() {
   const [latejob, setLatejob] = useState(latejobset);
   const [trig, setTrig] = useState(false);
   const [userf, setUserf] = useState(false);
-
+  useEffect(() => {
+    let id = searchParams.get("job");
+    let title = searchParams.get("role");
+    if (id !== null) {
+      dispatch(getsingleJob({id,title}))
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   /**
    * Pass jobid and jobrole to update URL
    *
@@ -56,8 +59,7 @@ export function Maindetails() {
    */
   const updateUrl = useCallback(
     (id, jobRole) => {
-      let sluggyRole = jobRole.replaceAll(/\s/g, "");
-      let newpPath = `/Mainpage?job=${id}&role=${sluggyRole}`;
+      let newpPath = `/Mainpage?job=${id}&role=${jobRole}`;
       navigate(newpPath, { replace: true });
     },
     [navigate]
@@ -75,7 +77,7 @@ export function Maindetails() {
       setLatejob(latestJobs);
     }
 
-    if (singleJob) updateUrl(singleJob?._id, singleJob?.jobRole);
+    if (singleJob) updateUrl(singleJob?._id, singleJob?.jobTitle);
 
     setTrig(trig);
   }, [latejobset, latestJobs, trig, updateUrl, singleJob, searchParams]);
@@ -442,7 +444,7 @@ export function Maindetails() {
                         }) => {
                           return (
                             <Grid item xl={12} key={_id} sx={styles.cardslist}>
-                              <div onClick={() => getJobInfo(_id, jobRole)}>
+                              <div onClick={() => getJobInfo(_id, jobTitle)}>
                                 <Jobscard
                                   jobId={_id}
                                   jobTitle={jobTitle}

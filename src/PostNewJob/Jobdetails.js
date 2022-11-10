@@ -11,7 +11,7 @@ import { Line } from "rc-progress";
 import { styles } from "./postjobstyle";
 import { Close } from "@mui/icons-material";
 import { useSelector, useDispatch } from "react-redux";
-import { descSet, errorJobs, quesSend, roleSet, skillSet } from "../slices/job";
+import { descSet, errorJobs, quesSend, roleSet, skillSet,titleSet} from "../slices/job";
 import { v4 as uuidv4 } from "uuid";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
@@ -36,7 +36,6 @@ export function Jobdetails(props) {
   const jobs = useSelector((state) => state.jobs.details);
   const descript = useSelector((state) => state.jobs.jobDescription);
   const level = useSelector((state) => state.jobs.jobRole);
-
   useEffect(() => {
     axios
       .get("http://localhost:3000/api/getTypesJobs", {
@@ -52,16 +51,17 @@ export function Jobdetails(props) {
 
   const [jobDesc, setJobDesc] = useState(descript);
   const handleChangesRole = (e) => {
-    const news = titleDesc.filter((i) => i.role === e);
+    const news = titleDesc.filter(i => i.rol.role === e);
 
     dispatch(roleSet(e));
 
     dispatch(errorJobs({ jobRole: "" }));
     if (news[0] !== undefined) {
-      dispatch(quesSend(news[0].ques));
+      dispatch(quesSend(news[0].rol.ques))
+  dispatch(titleSet(news[0].catg))
     }
     if (news.length !== 0) {
-      setJobDesc(news[0].desc);
+      setJobDesc(news[0].rol.desc)
     } else {
       setJobDesc(
         " <p>Are you looking for the next professional opportunity that will challenge you and advance your career? Join our team now!</p><p><strong>Requirements:</strong></p><ul><li>Collaborate with other team members and stakeholders</li><li>Contribute to team productivity, product quality, and tech adoption</li><li>Communicate technical design, requirements, functionality, and limitations</li><li>Be overall responsible for all the deliverables and for meeting targets</li><li>Recommend and execute improvements</li></ul><p><strong>Job Requirements:</strong></p><ul><li>Bachelor's degree</li><li>At least 1+ years of prior experience in a similar area</li><li>Ability to work effectively both individually and in a team environment</li><li>Excellent verbal and written communication skills</li><li>Great attention to detail</li><li>Organizational skills</li><li>Effective time management skills and the ability to meet deadlines</li></ul>"
@@ -82,10 +82,10 @@ export function Jobdetails(props) {
   const [type, setType] = useState([]);
 
   var titleDesc = [];
-
+  
   type.map((typ) => {
     typ.roleAndDesc.map((rol) => {
-      titleDesc.push(rol);
+      titleDesc.push({rol,catg:typ.jobNam})
       return null;
     });
     return null;
@@ -130,7 +130,7 @@ export function Jobdetails(props) {
               onInputChange={(event, value) => {
                 handleChangesRole(value);
               }}
-              options={titleDesc.map((option) => option.role)}
+              options={titleDesc.map((option) => option.rol.role)}
               renderInput={(params) => (
                 <TextField
                   sx={{ width: "330px" }}

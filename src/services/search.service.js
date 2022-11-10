@@ -6,6 +6,11 @@ const getLatestJObs = () => {
     return response;
   });
 };
+const getSingleJObs = (id,title) => {
+  return axios.get(API_URL + `getJobsbyId/${id}/${title}`).then((response) => {
+    return response;
+  });
+};
 
 const searchJobs = (keyword, location, type) => {
   return axios
@@ -20,5 +25,6 @@ const searchJobs = (keyword, location, type) => {
 const searchService = {
   getLatestJObs,
   searchJobs,
+  getSingleJObs
 };
 export default searchService;

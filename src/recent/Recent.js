@@ -6,7 +6,7 @@ import { styles } from "./Recentstyle";
 import SortIcon from "@mui/icons-material/Sort";
 import Jobscard from "./Jobscard";
 import { useDispatch } from "react-redux";
-import { searchJobs, searchJobsFromHome } from "../slices/search";
+import { searchJobs, searchJobsFromHome, setJob } from "../slices/search";
 import { useNavigate } from "react-router-dom";
 import { applCand, jobssSet } from "../slices/job";
 import { Box } from "@mui/system";
@@ -22,6 +22,8 @@ function Recent() {
       .unwrap()
       .then((originalPromiseResult) => {
         setLatestJobs(originalPromiseResult);
+
+        dispatch(setJob(originalPromiseResult[0]))
       })
       .catch((error) => {
         console.warn(error);
@@ -35,14 +37,12 @@ function Recent() {
     return null;
   });
 
-  function selectJobFromHome(_id, jobRole) {
-    let sluggyRole = jobRole.replaceAll(/\s/g, "");
+  function selectJobFromHome(_id) {
+
     dispatch(searchJobsFromHome(_id))
       .unwrap()
       .then(() => {
-        navigate(`/Mainpage?job=${_id}&role=${sluggyRole}`, {
-          replace: true,
-        });
+        navigate(`/Mainpage`);
       });
   }
 
@@ -132,7 +132,7 @@ function Recent() {
                   }) => (
                     <div
                       key={_id}
-                      onClick={() => selectJobFromHome(_id, jobRole)}
+                      onClick={() => selectJobFromHome(_id)}
                     >
                       <Jobscard
                         jobTitle={jobTitle}

@@ -9,7 +9,18 @@ export const searchJobs = createAsyncThunk("jobs/search", async (thunkAPI) => {
     (error.response && error.response.data && error.response.data.message) ||
       error.message ||
       error.toString();
-    // thunkAPI.dispatch(setMessage(message));
+    return thunkAPI.rejectWithValue();
+  }
+});
+export const getsingleJob = createAsyncThunk("jobsingle/search", async ({id,title},thunkAPI) => {
+  try {
+    const response = await searchService.getSingleJObs(id,title);
+    return response.data;
+  } catch (error) {
+    
+      (error.response && error.response.data && error.response.data.message) ||
+      error.message ||
+      error.toString();
     return thunkAPI.rejectWithValue();
   }
 });
@@ -45,6 +56,16 @@ export const searchKeys = createAsyncThunk(
   }
 );
 
+export const setJob = createAsyncThunk(
+  "Setjob/keywordSearch",
+  async (value, thunkAPI) => {
+    try {
+      return value;
+    } catch (error) {
+      return thunkAPI.rejectWithValue();
+    }
+  }
+);
 export const searchJobsFromHome = createAsyncThunk(
   "jobs/searchJobcard",
   async (thunkAPI) => {
@@ -71,37 +92,25 @@ const searchSlice = createSlice({
   extraReducers: {
     [searchJobs.fulfilled]: (state, action) => {
       state.searchDetails = action.payload;
-      window.sessionStorage.setItem("items", JSON.stringify(action.payload));
-      state.selectedJob = action.payload[0];
-      window.sessionStorage.setItem(
-        "single",
-        JSON.stringify(action.payload[0])
-      );
     },
     [searchJobs.rejected]: (state) => {
       state.searchDetails = null;
       state.selectedJob = null;
     },
+    [setJob.fulfilled]: (state,action) => {
+      state.selectedJob = action.payload;
+    },
+    [getsingleJob.fulfilled]: (state,action) => {
+      state.searchDetails = action.payload;
+      state.selectedJob =   action.payload[0]
+    },
     [keywordSearch.fulfilled]: (state, action) => {
       state.searchDetails = action.payload;
-
-      window.sessionStorage.setItem("items", JSON.stringify(action.payload));
-      state.selectedJob = action.payload[0];
-      window.sessionStorage.setItem(
-        "single",
-        JSON.stringify(action.payload[0])
-      );
     },
     [CategoryJobs.fulfilled]: (state, action) => {
-      // state.jobslate = action.payload;
       state.selectedJob = action.payload[0];
-      window.sessionStorage.setItem(
-        "single",
-        JSON.stringify(action.payload[0])
-      );
     },
     [searchKeys.fulfilled]: (state, action) => {
-      // state.jobslate = action.payload;
       state.jobslate = action.payload;
     },
     [keywordSearch.rejected]: (state) => {
@@ -109,7 +118,6 @@ const searchSlice = createSlice({
     },
     [searchJobsFromHome.fulfilled]: (state, action) => {
       state.searchDetails = action.payload;
-      window.sessionStorage.setItem("items", JSON.stringify(action.payload));
       state.selectedJob = state.searchDetails.find(
         (item) => item._id === action.meta.arg
       );

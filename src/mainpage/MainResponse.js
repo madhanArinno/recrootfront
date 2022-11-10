@@ -23,6 +23,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ReactQuill from "react-quill";
+import NavigationScroll from "../ScrollToTop";
 export function MainResponse(props) {
   const singleJob = useSelector((state) => state.searchJobs.selectedJob);
   const numbers = singleJob.requiredSkill;
@@ -56,11 +57,12 @@ export function MainResponse(props) {
   };
 
   const handleBack = () => {
-    navigate(-1);
+    navigate('/Mainpage');
   };
 
   return (
     <Box>
+       <NavigationScroll />
       <Button
         sx={{ color: "#4fa9ff", textTransform: "capitalize", mt: "15px" }}
         onClick={handleBack}

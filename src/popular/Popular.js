@@ -28,7 +28,7 @@ function Popular(props) {
   var types = [];
   jobs.map((tit) => {
     if (tit.status === "active") {
-      types.push(tit.jobRole);
+      types.push(tit.jobTitle);
     }
     return null;
   });
@@ -41,7 +41,7 @@ function Popular(props) {
   }
 
   function filterByValue(array, string) {
-    return array.filter((o) => o.jobRole.includes(string));
+    return array.filter((o) => o.jobTitle.includes(string));
   }
 
   const handleClick = (value) => {
