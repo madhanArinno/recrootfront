@@ -419,39 +419,6 @@ export function MainResponse(props) {
             </Typography>
             <Box sx={styles.skillbtns}>{SkillsItems}</Box>
           </Box>
-
-          <Box>
-            <Typography variant="h5" sx={styles.jobsdetail}>
-              About The Company
-            </Typography>
-
-            <Box sx={{ ml: "35px" }}>
-              <ReactQuill
-                value={singleJob.company.companyInformation.infodes}
-                readOnly={true}
-                width="400px"
-                theme={"bubble"}
-              />
-            </Box>
-          </Box>
-          <Divider />
-          <Box sx={styles.website}>
-            <Typography variant="h5" sx={styles.lasttext}>
-              Company Website
-            </Typography>
-            <Typography variant="h5" sx={styles.linksite}>
-              {singleJob.company.basicInformation.cmpwebsite}
-            </Typography>
-          </Box>
-          <Divider />
-          <Box sx={styles.website}>
-            <Typography variant="h5" sx={styles.lasttext}>
-              Contact Employer
-            </Typography>
-            <Typography variant="h5" href="#" sx={styles.linksite}>
-              {singleJob.company.basicInformation.cmpemail}
-            </Typography>
-          </Box>
         </Box>
       </Card>
     </Box>

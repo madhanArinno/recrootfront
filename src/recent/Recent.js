@@ -24,6 +24,7 @@ function Recent() {
         setLatestJobs(originalPromiseResult);
 
         dispatch(setJob(originalPromiseResult[0]))
+        dispatch(jobssSet([]))
       })
       .catch((error) => {
         console.warn(error);
