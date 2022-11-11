@@ -36,6 +36,7 @@ export function Jobdetails(props) {
   const jobs = useSelector((state) => state.jobs.details);
   const descript = useSelector((state) => state.jobs.jobDescription);
   const level = useSelector((state) => state.jobs.jobRole);
+  const title = useSelector((state) => state.jobs.jobTitle);
   useEffect(() => {
     axios
       .get("http://localhost:3000/api/getTypesJobs", {
@@ -48,21 +49,28 @@ export function Jobdetails(props) {
 
   const [role, setRole] = useState({ skill: "", id: uuidv4() });
   const [roles, setRoles] = useState(jobs && jobs.requiredSkill);
+  const [category, setCategory] = useState(false);
 
   const [jobDesc, setJobDesc] = useState(descript);
   const handleChangesRole = (e) => {
-    const news = titleDesc.filter(i => i.rol.role === e);
-
-    dispatch(roleSet(e));
-
+    const news = titleDesc.filter(i => i.rol.role === e.target.value);
+    dispatch(roleSet(e.target.value));
     dispatch(errorJobs({ jobRole: "" }));
+   
     if (news[0] !== undefined) {
       dispatch(quesSend(news[0].rol.ques))
   dispatch(titleSet(news[0].catg))
     }
     if (news.length !== 0) {
       setJobDesc(news[0].rol.desc)
+      setCategory(false)
     } else {
+      if (e.target.value.length === 0) {
+        setCategory(false)
+      setJobDesc('')
+        return null
+      }
+      setCategory(true)
       setJobDesc(
         " <p>Are you looking for the next professional opportunity that will challenge you and advance your career? Join our team now!</p><p><strong>Requirements:</strong></p><ul><li>Collaborate with other team members and stakeholders</li><li>Contribute to team productivity, product quality, and tech adoption</li><li>Communicate technical design, requirements, functionality, and limitations</li><li>Be overall responsible for all the deliverables and for meeting targets</li><li>Recommend and execute improvements</li></ul><p><strong>Job Requirements:</strong></p><ul><li>Bachelor's degree</li><li>At least 1+ years of prior experience in a similar area</li><li>Ability to work effectively both individually and in a team environment</li><li>Excellent verbal and written communication skills</li><li>Great attention to detail</li><li>Organizational skills</li><li>Effective time management skills and the ability to meet deadlines</li></ul>"
       );
@@ -73,7 +81,9 @@ export function Jobdetails(props) {
     setJobDesc(value);
     dispatch(descSet(value));
   };
-
+  const handleChangesTitle = (e) => {
+    dispatch(titleSet(e))
+  }
   const addSkil = () => {
     setRoles([...roles, role]);
     dispatch(skillSet([...roles, role]));
@@ -127,7 +137,7 @@ export function Jobdetails(props) {
               fullWidth
               name="jobRole"
               value={level}
-              onInputChange={(event, value) => {
+              onBlur={( value) => {
                 handleChangesRole(value);
               }}
               options={titleDesc.map((option) => option.rol.role)}
@@ -147,7 +157,39 @@ export function Jobdetails(props) {
               )}
             />
           </Box>
-          <Box sx={styles.applybox}></Box>
+        {category === true ?
+          <Box sx={styles.infofldloc}>
+                    <Typography variant='p' sx={styles.sectxt}>Job Category</Typography>
+                    <Autocomplete
+        freeSolo
+        id="free-solo-2-demo"
+        disableClearable
+        value={title}
+        onInputChange={(event, value) => {handleChangesTitle(value)}}
+        name='jobTitle'
+        options={type.map((option) => option.jobNam)}
+        renderInput={(params) => (
+          <TextField
+          sx={{width:'330px',textTransform:'capitalize'}}
+          error={errors.jobTitle ? true : false}
+          helperText={errors.jobTitle}
+          value='hhhi'
+          name='jobTitle'
+            {...params}
+            label="Job Category"
+            placeholder="Please Provide Category"
+            InputProps={{
+              ...params.InputProps,
+              type: 'search',
+            }}
+          />
+        )}
+      />
+                 
+                </Box> : ''}
+          <Box sx={styles.applybox}>
+
+          </Box>
         </Box>
 
         <Box sx={styles.infofld}>

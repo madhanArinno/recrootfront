@@ -3,6 +3,9 @@ export const validator = (values) => {
 
   Object.entries(values).map((item) => {
     switch (item[0]) {
+      case "jobTitle":
+        validateJobTitle(item[1], errors);
+        break;
       case "jobRole":
         validateRole(item[1], errors);
         break;
@@ -46,6 +49,14 @@ export const validator = (values) => {
 // ******************************
 
 // ******************************
+function validateJobTitle(jobTitle, errors) {
+  let result = true;
+  if (!jobTitle || jobTitle === undefined || jobTitle === '') {
+    errors.jobTitle = "Job Category is Required";
+    result = false;
+  }
+  return result;
+}
 function validateRole(jobRole, errors) {
   let result = true;
 
