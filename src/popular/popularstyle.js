@@ -58,7 +58,7 @@ export const styles = {
     display: "flex",
     justifyContent: "space-around",
     alignItems: "center",
-    // marginTop:'16px'
+    marginTop:'16px'
   },
   jobtitle: {
     fontStyle: "normal",
